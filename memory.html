@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css?=v171020222057">
+    <title>Memory Game</title>
+
+    <script>
+        var userClick1 = 0;
+        var userClick2 = 0;
+        var userSelectedCard1 = "";
+        var userSelectedCard2 = "";
+        function checkClickedCard(cardNum, cardId) {
+            //Geklikte kaart disablen, want je mag maar een keer op dezelfde kaart klikken.
+            document.getElementById(cardId).disabled = true;
+            //Juiste waarde op de kaart zetten.
+            document.getElementById(cardId).value = cardNum
+            //document.getElementById(cardId).style = "background: url(myimage.png)";
+
+            //Lees en onthoudt klik1 en klik2
+            if (userClick1 == 0) {
+                userClick1 = cardNum;
+                userSelectedCard1 = cardId;
+            } else {
+                userClick2 = cardNum;
+                userSelectedCard2 = cardId
+            }
+
+            if (userClick2 != 0) {
+                if (userClick1 == userClick2) {
+                    alert('Goed zo...');
+                } else {
+                    alert('Fout');
+                    document.getElementById(userSelectedCard1).disabled = false;
+                    document.getElementById(userSelectedCard2).disabled = false;
+                    document.getElementById(userSelectedCard1).value = "";
+                    document.getElementById(userSelectedCard2).value = "";
+                }
+
+                userClick1 = 0;
+                userClick2 = 0;
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="memoryContainer">
+        <h1>Memory</h1>
+        <input type="button" value="" id="kaart1" class="memoryCard" onclick="checkClickedCard(1, 'kaart1')">
+        <input type="button" value="" id="kaart2" class="memoryCard" onclick="checkClickedCard(2, 'kaart2')">
+        <input type="button" value="" id="kaart3" class="memoryCard" onclick="checkClickedCard(3, 'kaart3')">
+        <input type="button" value="" id="kaart4" class="memoryCard" onclick="checkClickedCard(4, 'kaart4')">
+    </div>
+
+</body>
+</html>
