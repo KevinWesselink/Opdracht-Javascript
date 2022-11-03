@@ -7,12 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Interactieve HTML</title>
     <script>
-        function checkForm() {
-            let getal = document.getElementById('getal').value;
-            if (getal < 0 || getal >= 10) {
+        function addNumber() {
+            let getal1 = document.getElementById('getal1').value;
+            let getal2 = document.getElementById('getal2').value;
+            if (getal1 < 0 || getal1 >= 10 && getal2 < 0 || getal2 >= 10) {
                 alert('Het ingevulde getal is onjuist...');
             } else {
-                alert('Het ingevulde getal is juist...');
+                alert(Number(getal1) + Number(getal2));
             }
         }
     </script>
@@ -23,10 +24,13 @@
 
     Vul een getal tussen de 0 en 10 in:
     <br><br>
-    <label for="getal">Getal:</label><br>
-    <input type="text" id="getal" name="getal"><br>
+    <label for="getal1">Getal 1:</label><br>
+    <input type="text" id="getal1" name="getal1"><br>
     <br>
-    <input type="button" value="Controleer getal" onclick="checkForm()">
+    <label for="getal2">Getal 2:</label><br>
+    <input type="text" id="getal2" name="getal2"><br>
+    <br>
+    <input type="button" value="Controleer getal" onclick="addNumber()">
 
 </body>
 </html>
