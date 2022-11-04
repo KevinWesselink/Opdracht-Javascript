@@ -5,14 +5,14 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css?=v171020222057">
+    <link rel="stylesheet" href="css/style.css?=v041120221209">
     <title>Memory Game</title>
 
     <script>
-        var userClick1 = 0;
-        var userClick2 = 0;
-        var userSelectedCard1 = "";
-        var userSelectedCard2 = "";
+        let userClick1 = 0;
+        let userClick2 = 0;
+        let userSelectedCard1 = "";
+        let userSelectedCard2 = "";
         function checkClickedCard(cardNum, cardId) {
             //Geklikte kaart disablen, want je mag maar een keer op dezelfde kaart klikken.
             document.getElementById(cardId).disabled = true;
@@ -61,6 +61,21 @@
         <input type="button" value="" id="kaart2" class="memoryCard" onclick="checkClickedCard(2, 'kaart2')">
         <input type="button" value="" id="kaart3" class="memoryCard" onclick="checkClickedCard(3, 'kaart3')">
         <input type="button" value="" id="kaart4" class="memoryCard" onclick="checkClickedCard(4, 'kaart4')">
+        <div class="clear"></div>
+        <input type="button" value="" id="kaart5" class="memoryCard" onclick="checkClickedCard(5, 'kaart5')">
+        <input type="button" value="" id="kaart6" class="memoryCard" onclick="checkClickedCard(6, 'kaart6')">
+        <input type="button" value="" id="kaart7" class="memoryCard" onclick="checkClickedCard(7, 'kaart7')">
+        <input type="button" value="" id="kaart8" class="memoryCard" onclick="checkClickedCard(8, 'kaart8')">
+        <div class="clear"></div>
+        <input type="button" value="" id="kaart9" class="memoryCard" onclick="checkClickedCard(9, 'kaart9')">
+        <input type="button" value="" id="kaart10" class="memoryCard" onclick="checkClickedCard(10, 'kaart10')">
+        <input type="button" value="" id="kaart11" class="memoryCard" onclick="checkClickedCard(11, 'kaart11')">
+        <input type="button" value="" id="kaart12" class="memoryCard" onclick="checkClickedCard(12, 'kaart12')">
+        <div class="clear"></div>
+        <input type="button" value="" id="kaart13" class="memoryCard" onclick="checkClickedCard(13, 'kaart13')">
+        <input type="button" value="" id="kaart14" class="memoryCard" onclick="checkClickedCard(14, 'kaart14')">
+        <input type="button" value="" id="kaart15" class="memoryCard" onclick="checkClickedCard(15, 'kaart15')">
+        <input type="button" value="" id="kaart16" class="memoryCard" onclick="checkClickedCard(16, 'kaart16')">
     </div>
 
 </body>
