@@ -9,10 +9,22 @@
 
     <script>
         function controleerAntwoorden() {
-            if (document.getElementById('vraag1').value === 'Madrid' && document.getElementById('vraag2').value === 'Middellandse Zee' && document.getElementById('vraag3').value === '15') {
-                document.getElementById('textDiv').innerHTML = "De antwoorden zijn correct.";
+            if (document.getElementById('vraag1').value === 'Madrid') {
+                document.getElementById('vraag1Div').innerHTML = "Vraag 1 is correct beantwoord";
             } else {
-                document.getElementById('textDiv').innerHTML = "De antwoorden zijn incorrect.";
+                document.getElementById('vraag1Div').innerHTML = "Vraag 1 is niet correct beantwoord";
+            }
+
+            if (document.getElementById('vraag2').value === 'Middellandse Zee') {
+                document.getElementById('vraag2Div').innerHTML = "Vraag 2 is correct beantwoord";
+            } else {
+                document.getElementById('vraag2Div').innerHTML = "Vraag 2 is niet correct beantwoord";
+            }
+
+            if (document.getElementById('vraag3').value === '15') {
+                document.getElementById('vraag3Div').innerHTML = "Vraag 3 is correct beantwoord";
+            } else {
+                document.getElementById('vraag3Div').innerHTML = "Vraag 3 is niet correct beantwoord";
             }
         }
     </script>
@@ -43,7 +55,9 @@
     <br>
     <input type="button" value="Controleer antwoorden" onclick="controleerAntwoorden()">
 
-    <div id="textDiv"></div>
+    <div id="vraag1Div"></div>
+    <div id="vraag2Div"></div>
+    <div id="vraag3Div"></div>
 
 </body>
 </html>
