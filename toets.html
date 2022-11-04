@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Toetsdocument</title>
+
+    <script>
+        function controleerAntwoorden() {
+            if (document.getElementById('vraag1').value === 'Madrid' && document.getElementById('vraag2').value === 'Middellandse Zee' && document.getElementById('vraag3').value === 15) {
+                document.getElementById('correct').innerHTML = "De antwoorden zijn correct.";
+            } else {
+                document.getElementById('incorrect').innerHTML = "De antwoorden zijn incorrect.";
+            }
+        }
+    </script>
+
+</head>
+<body>
+    <nav>
+        <a href="./index.html">Hoofdstuk 4</a>
+        <a href="./getallen.html">Getallen</a>
+        <a href="./toets.html">Toets</a>
+        <a href="./rockPaperScissors.html">Steen Papier Schaar</a>
+        <a href="./memory.html">Memory</a>
+    </nav>
+
+    <h1>Toets</h1>
+
+    <label for="vraag1">Wat is de hoofdstad van Spanje?</label><br>
+    <input type="text" id="vraag1" name="vraag1"><br>
+    <br>
+    <br>
+    <label for="vraag2">In welke zee ligt het eiland Mallorca?</label><br>
+    <input type="text" id="vraag2" name="vraag2"><br>
+    <br>
+    <br>
+    <label for="vraag3">Hoeveel paar poten heeft een duizendpoot?</label><br>
+    <input type="number" id="vraag3" name="vraag3"><br>
+    <br>
+    <br>
+    <input type="button" value="Controleer antwoorden" onclick="controleerAntwoorden()">
+
+    <div class="correct"></div>
+    <div class="incorrect"></div>
+
+</body>
+</html>

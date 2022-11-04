@@ -10,16 +10,25 @@
         function addNumber() {
             let getal1 = document.getElementById('getal1').value;
             let getal2 = document.getElementById('getal2').value;
-            if (getal1 < 0 || getal1 >= 10 && getal2 < 0 || getal2 >= 10) {
-                alert('Het ingevulde getal is onjuist...');
+            if (getal1 > 0 || getal1 <= 10 && getal2 > 0 || getal2 <= 10) {
+                // document.getElementById('textDivOk').innerHTML = document.getElementById('getal1').value + document.getElementById('getal2').value;
+                document.getElementById('textDivOk').innerHTML = getal1 + getal2;
             } else {
-                alert(Number(getal1) + Number(getal2));
+                document.getElementById('textDivNotOk').innerHTML = "Ingevoerde getal is onjuist..."
             }
         }
     </script>
 </head>
 
 <body>
+    <nav>
+        <a href="./index.html">Hoofdstuk 4</a>
+        <a href="./getallen.html">Getallen</a>
+        <a href="./toets.html">Toets</a>
+        <a href="./rockPaperScissors.html">Steen Papier Schaar</a>
+        <a href="./memory.html">Memory</a>
+    </nav>
+
     <h1>Oefen met Javascript</h1>
 
     Vul een getal tussen de 0 en 10 in:
@@ -31,6 +40,9 @@
     <input type="text" id="getal2" name="getal2"><br>
     <br>
     <input type="button" value="Controleer getal" onclick="addNumber()">
+
+    <div id="textDivOk"></div>
+    <div id="textDivNotOk"></div>
 
 </body>
 </html>
