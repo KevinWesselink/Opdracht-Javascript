@@ -10,11 +10,10 @@
         function addNumber() {
             let getal1 = document.getElementById('getal1').value;
             let getal2 = document.getElementById('getal2').value;
-            if (getal1 > 0 || getal1 <= 10 && getal2 > 0 || getal2 <= 10) {
-                // document.getElementById('textDivOk').innerHTML = document.getElementById('getal1').value + document.getElementById('getal2').value;
-                document.getElementById('textDivOk').innerHTML = getal1 + getal2;
+            if ((getal1 > 0 && getal1 <= 10) && (getal2 > 0 && getal2 <= 10)) {
+                document.getElementById('textDivOk').innerHTML = Number(getal1) + Number(getal2);
             } else {
-                document.getElementById('textDivNotOk').innerHTML = "Ingevoerde getal is onjuist..."
+                document.getElementById('textDivOk').innerHTML = "Ingevoerde getal is onjuist..."
             }
         }
     </script>
@@ -42,7 +41,6 @@
     <input type="button" value="Controleer getal" onclick="addNumber()">
 
     <div id="textDivOk"></div>
-    <div id="textDivNotOk"></div>
 
 </body>
 </html>
