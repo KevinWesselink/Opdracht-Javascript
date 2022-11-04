@@ -9,10 +9,10 @@
 
     <script>
         function controleerAntwoorden() {
-            if (document.getElementById('vraag1').value === 'Madrid' && document.getElementById('vraag2').value === 'Middellandse Zee' && document.getElementById('vraag3').value === 15) {
-                document.getElementById('correct').innerHTML = "De antwoorden zijn correct.";
+            if (document.getElementById('vraag1').value === 'Madrid' && document.getElementById('vraag2').value === 'Middellandse Zee' && document.getElementById('vraag3').value === '15') {
+                document.getElementById('textDiv').innerHTML = "De antwoorden zijn correct.";
             } else {
-                document.getElementById('incorrect').innerHTML = "De antwoorden zijn incorrect.";
+                document.getElementById('textDiv').innerHTML = "De antwoorden zijn incorrect.";
             }
         }
     </script>
@@ -43,8 +43,7 @@
     <br>
     <input type="button" value="Controleer antwoorden" onclick="controleerAntwoorden()">
 
-    <div class="correct"></div>
-    <div class="incorrect"></div>
+    <div id="textDiv"></div>
 
 </body>
 </html>
