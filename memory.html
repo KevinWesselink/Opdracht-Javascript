@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css?=v071120220859">
+    <link rel="stylesheet" href="css/style.css?=v071120221054">
     <title>Memory Game</title>
 
     <script>
@@ -17,7 +17,7 @@
             //Geklikte kaart disablen, want je mag maar een keer op dezelfde kaart klikken.
             document.getElementById(cardId).disabled = true;
             //Juiste waarde op de kaart zetten.
-            document.getElementById(cardId).value = cardNum
+            document.getElementById(cardId).value = cardNum;
             //document.getElementById(cardId).style = "background: url(myimage.png)";
 
             //Lees en onthoudt klik1 en klik2
@@ -44,6 +44,20 @@
                 userClick2 = 0;
             }
         }
+
+        function shuffleCards() {
+            document.getElementById("memoryCards").innerHTML = '';
+            let cardsArr = [];
+            for (i = 0; i < 16 / 2; i++) {
+                cardsArr.push(i);
+                cardsArr.push(i);
+            }
+            while (cardsArr.length > 0) {
+                let randomNumber = Math.floor(Math.random() * (cardsArr.length));
+                document.getElementById("memoryCards").innerHTML += '<input type="button" value="' + cardsArr[randomNumber] + '" id="kaart' + cardsArr.length + '" class="memoryCard" onclick="checkClickedCard(' + cardsArr[randomNumber] + ', \'kaart' + cardsArr.length + '\');">'
+                cardsArr.splice(randomNumber, 1);
+            }
+        }
     </script>
 </head>
 <body>
@@ -67,18 +81,22 @@
         <input type="image" src="images/MGolenAvatar.jpg" value="" id="kaart7" class="memoryCard" onclick="checkClickedCard(7, 'kaart7')">
         <input type="image" src="images/PGemertAvatar.jpg" value="" id="kaart8" class="memoryCard" onclick="checkClickedCard(8, 'kaart8')">
         <div class="clear"></div>
-        <input type="image" src="images/ADalmolenAvatar.jpg" value="" id="kaart1" class="memoryCard" onclick="checkClickedCard(1, 'kaart1')">
-        <input type="image" src="images/DLandmanAvatar.jpg" value="" id="kaart2" class="memoryCard" onclick="checkClickedCard(2, 'kaart2')">
-        <input type="image" src="images/FSchweertmanAvatar.jpg" value="" id="kaart3" class="memoryCard" onclick="checkClickedCard(3, 'kaart3')">
-        <input type="image" src="images/JFokkenroodAvatar.jpg" value="" id="kaart4" class="memoryCard" onclick="checkClickedCard(4, 'kaart4')">
+        <input type="image" src="images/ADalmolenAvatar.jpg" value="" id="kaart9" class="memoryCard" onclick="checkClickedCard(1, 'kaart9')">
+        <input type="image" src="images/DLandmanAvatar.jpg" value="" id="kaart10" class="memoryCard" onclick="checkClickedCard(2, 'kaart10')">
+        <input type="image" src="images/FSchweertmanAvatar.jpg" value="" id="kaart11" class="memoryCard" onclick="checkClickedCard(3, 'kaart11')">
+        <input type="image" src="images/JFokkenroodAvatar.jpg" value="" id="kaart12" class="memoryCard" onclick="checkClickedCard(4, 'kaart12')">
         <div class="clear"></div>
-        <input type="image" src="images/JHeuvelmanAvatar.jpg" value="" id="kaart5" class="memoryCard" onclick="checkClickedCard(5, 'kaart5')">
-        <input type="image" src="images/JSiewersAvatar.jpg" value="" id="kaart6" class="memoryCard" onclick="checkClickedCard(6, 'kaart6')">
-        <input type="image" src="images/MGolenAvatar.jpg" value="" id="kaart7" class="memoryCard" onclick="checkClickedCard(7, 'kaart7')">
-        <input type="image" src="images/PGemertAvatar.jpg" value="" id="kaart8" class="memoryCard" onclick="checkClickedCard(8, 'kaart8')">
+        <input type="image" src="images/JHeuvelmanAvatar.jpg" value="" id="kaart13" class="memoryCard" onclick="checkClickedCard(5, 'kaart13')">
+        <input type="image" src="images/JSiewersAvatar.jpg" value="" id="kaart14" class="memoryCard" onclick="checkClickedCard(6, 'kaart14')">
+        <input type="image" src="images/MGolenAvatar.jpg" value="" id="kaart15" class="memoryCard" onclick="checkClickedCard(7, 'kaart15')">
+        <input type="image" src="images/PGemertAvatar.jpg" value="" id="kaart16" class="memoryCard" onclick="checkClickedCard(8, 'kaart16')">
     </div>
 
     <div class="guessContainer" id="gok"></div>
+
+    <div class="shuffleContainer">
+        <input type="button" value="Klik hier om de kaarten te schudden." onclick="shuffleCards()">
+    </div>
 
 </body>
 </html>
