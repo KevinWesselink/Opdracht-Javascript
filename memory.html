@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css?=v041120221215">
+    <link rel="stylesheet" href="css/style.css?=v071120220859">
     <title>Memory Game</title>
 
     <script>
@@ -31,9 +31,9 @@
 
             if (userClick2 != 0) {
                 if (userClick1 == userClick2) {
-                    alert('Goed zo...');
+                    document.getElementById('gok').innerHTML = "Goed zo...";
                 } else {
-                    alert('Fout');
+                    document.getElementById('gok').innerHTML = "Fout";
                     document.getElementById(userSelectedCard1).disabled = false;
                     document.getElementById(userSelectedCard2).disabled = false;
                     document.getElementById(userSelectedCard1).value = "";
@@ -57,26 +57,28 @@
 
     <div class="memoryContainer">
         <h1>Memory</h1>
-        <input type="button" value="" id="kaart1" class="memoryCard" onclick="checkClickedCard(1, 'kaart1')">
-        <input type="button" value="" id="kaart2" class="memoryCard" onclick="checkClickedCard(2, 'kaart2')">
-        <input type="button" value="" id="kaart3" class="memoryCard" onclick="checkClickedCard(3, 'kaart3')">
-        <input type="button" value="" id="kaart4" class="memoryCard" onclick="checkClickedCard(4, 'kaart4')">
+        <input type="image" src="images/ADalmolenAvatar.jpg" value="" id="kaart1" class="memoryCard" onclick="checkClickedCard(1, 'kaart1')">
+        <input type="image" src="images/DLandmanAvatar.jpg" value="" id="kaart2" class="memoryCard" onclick="checkClickedCard(2, 'kaart2')">
+        <input type="image" src="images/FSchweertmanAvatar.jpg" value="" id="kaart3" class="memoryCard" onclick="checkClickedCard(3, 'kaart3')">
+        <input type="image" src="images/JFokkenroodAvatar.jpg" value="" id="kaart4" class="memoryCard" onclick="checkClickedCard(4, 'kaart4')">
         <div class="clear"></div>
-        <input type="button" value="" id="kaart5" class="memoryCard" onclick="checkClickedCard(5, 'kaart5')">
-        <input type="button" value="" id="kaart6" class="memoryCard" onclick="checkClickedCard(6, 'kaart6')">
-        <input type="button" value="" id="kaart7" class="memoryCard" onclick="checkClickedCard(7, 'kaart7')">
-        <input type="button" value="" id="kaart8" class="memoryCard" onclick="checkClickedCard(8, 'kaart8')">
+        <input type="image" src="images/JHeuvelmanAvatar.jpg" value="" id="kaart5" class="memoryCard" onclick="checkClickedCard(5, 'kaart5')">
+        <input type="image" src="images/JSiewersAvatar.jpg" value="" id="kaart6" class="memoryCard" onclick="checkClickedCard(6, 'kaart6')">
+        <input type="image" src="images/MGolenAvatar.jpg" value="" id="kaart7" class="memoryCard" onclick="checkClickedCard(7, 'kaart7')">
+        <input type="image" src="images/PGemertAvatar.jpg" value="" id="kaart8" class="memoryCard" onclick="checkClickedCard(8, 'kaart8')">
         <div class="clear"></div>
-        <input type="button" value="" id="kaart9" class="memoryCard" onclick="checkClickedCard(9, 'kaart9')">
-        <input type="button" value="" id="kaart10" class="memoryCard" onclick="checkClickedCard(10, 'kaart10')">
-        <input type="button" value="" id="kaart11" class="memoryCard" onclick="checkClickedCard(11, 'kaart11')">
-        <input type="button" value="" id="kaart12" class="memoryCard" onclick="checkClickedCard(12, 'kaart12')">
+        <input type="image" src="images/ADalmolenAvatar.jpg" value="" id="kaart1" class="memoryCard" onclick="checkClickedCard(1, 'kaart1')">
+        <input type="image" src="images/DLandmanAvatar.jpg" value="" id="kaart2" class="memoryCard" onclick="checkClickedCard(2, 'kaart2')">
+        <input type="image" src="images/FSchweertmanAvatar.jpg" value="" id="kaart3" class="memoryCard" onclick="checkClickedCard(3, 'kaart3')">
+        <input type="image" src="images/JFokkenroodAvatar.jpg" value="" id="kaart4" class="memoryCard" onclick="checkClickedCard(4, 'kaart4')">
         <div class="clear"></div>
-        <input type="button" value="" id="kaart13" class="memoryCard" onclick="checkClickedCard(13, 'kaart13')">
-        <input type="button" value="" id="kaart14" class="memoryCard" onclick="checkClickedCard(14, 'kaart14')">
-        <input type="button" value="" id="kaart15" class="memoryCard" onclick="checkClickedCard(15, 'kaart15')">
-        <input type="button" value="" id="kaart16" class="memoryCard" onclick="checkClickedCard(16, 'kaart16')">
+        <input type="image" src="images/JHeuvelmanAvatar.jpg" value="" id="kaart5" class="memoryCard" onclick="checkClickedCard(5, 'kaart5')">
+        <input type="image" src="images/JSiewersAvatar.jpg" value="" id="kaart6" class="memoryCard" onclick="checkClickedCard(6, 'kaart6')">
+        <input type="image" src="images/MGolenAvatar.jpg" value="" id="kaart7" class="memoryCard" onclick="checkClickedCard(7, 'kaart7')">
+        <input type="image" src="images/PGemertAvatar.jpg" value="" id="kaart8" class="memoryCard" onclick="checkClickedCard(8, 'kaart8')">
     </div>
+
+    <div class="guessContainer" id="gok"></div>
 
 </body>
 </html>
