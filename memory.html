@@ -19,7 +19,10 @@
             document.getElementById(cardId).disabled = true;
             //Juiste waarde op de kaart zetten.
             document.getElementById(cardId).value = cardNum;
-            //document.getElementById(cardId).style = "background: url(myimage.png)";
+
+            if (cardNum === 1) {
+                document.getElementById("cardNum").style.backgroundImage = "url(ADalmolen.Avatar.jpg)";
+            }
 
             //Lees en onthoudt klik1 en klik2
             if (userClick1 === 0) {
@@ -72,7 +75,7 @@
 
     <div class="memoryContainer">
         <h1>Memory</h1>
-        <input type="image" src="images/ADalmolenAvatar.jpg" value="" id="kaart1" class="memoryCard" onclick="checkClickedCard(1, 'kaart1')">
+        <input type="button" value="" id="kaart1" class="memoryCard" onclick="checkClickedCard(1, 'kaart1')">
         <input type="image" src="images/DLandmanAvatar.jpg" value="" id="kaart2" class="memoryCard" onclick="checkClickedCard(2, 'kaart2')">
         <input type="image" src="images/FSchweertmanAvatar.jpg" value="" id="kaart3" class="memoryCard" onclick="checkClickedCard(3, 'kaart3')">
         <input type="image" src="images/JFokkenroodAvatar.jpg" value="" id="kaart4" class="memoryCard" onclick="checkClickedCard(4, 'kaart4')">
