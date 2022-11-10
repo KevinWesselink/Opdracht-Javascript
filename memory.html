@@ -11,6 +11,7 @@
     <script>
         let userClick1 = 0;
         let userClick2 = 0;
+        //let teller = 0;
         let userSelectedCard1 = "";
         let userSelectedCard2 = "";
         function checkClickedCard(cardNum, cardId) {
@@ -21,7 +22,7 @@
             //document.getElementById(cardId).style = "background: url(myimage.png)";
 
             //Lees en onthoudt klik1 en klik2
-            if (userClick1 == 0) {
+            if (userClick1 === 0) {
                 userClick1 = cardNum;
                 userSelectedCard1 = cardId;
             } else {
@@ -29,8 +30,8 @@
                 userSelectedCard2 = cardId
             }
 
-            if (userClick2 != 0) {
-                if (userClick1 == userClick2) {
+            if (userClick2 !== 0) {
+                if (userClick1 === userClick2) {
                     document.getElementById('gok').innerHTML = "Goed zo...";
                 } else {
                     document.getElementById('gok').innerHTML = "Fout";
@@ -39,7 +40,7 @@
                     document.getElementById(userSelectedCard1).value = "";
                     document.getElementById(userSelectedCard2).value = "";
                 }
-
+                //teller++;
                 userClick1 = 0;
                 userClick2 = 0;
             }
