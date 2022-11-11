@@ -20,28 +20,36 @@
             //Juiste waarde op de kaart zetten.
             document.getElementById(cardId).value = cardNum;
 
-            if (cardId === "kaart1") {
-                document.getElementById("kaart1").style.backgroundImage = "url(images/ADalmolenAvatar.jpg)";
-            }
+            // if (cardId === "kaart1") {
+            //     document.getElementById("kaart1").style.backgroundImage = "url(images/ADalmolenAvatar.jpg)";
+            // } else if (cardId === "kaart2") {
+            //     document.getElementById("kaart2").style.backgroundImage = "url(images/DLandmanAvatar.jpg)";
+            // }
 
             //Lees en onthoudt klik1 en klik2
             if (userClick1 === 0) {
                 userClick1 = cardNum;
                 userSelectedCard1 = cardId;
+                console.log("Klik 1: " + cardId);
+                document.getElementById(cardId).style.backgroundImage = "";
             } else {
                 userClick2 = cardNum;
                 userSelectedCard2 = cardId;
+                console.log("Klik 2: " + cardId)
             }
 
             if (userClick2 !== 0) {
                 if (userClick1 === userClick2) {
                     document.getElementById('gok').innerHTML = "Goed zo...";
+                    console.log("Goed");
                 } else {
                     document.getElementById('gok').innerHTML = "Fout";
+                    console.log("Fout");
                     document.getElementById(userSelectedCard1).disabled = false;
                     document.getElementById(userSelectedCard2).disabled = false;
                     document.getElementById(userSelectedCard1).value = "";
                     document.getElementById(userSelectedCard2).value = "";
+                    document.getElementById(cardId).style.backgroundImage = "url(images/BlauwHokje.jpg)";
                 }
                 //teller++;
                 userClick1 = 0;
