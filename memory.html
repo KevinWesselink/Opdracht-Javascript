@@ -20,25 +20,19 @@
             //Juiste waarde op de kaart zetten.
             document.getElementById(cardId).value = cardNum;
 
-            // if (cardId === "kaart1") {
-            //     document.getElementById("kaart1").style.backgroundImage = "url(images/ADalmolenAvatar.jpg)";
-            // } else if (cardId === "kaart2") {
-            //     document.getElementById("kaart2").style.backgroundImage = "url(images/DLandmanAvatar.jpg)";
-            // }
-
             //Lees en onthoudt klik1 en klik2
             if (userClick1 === 0) {
                 userClick1 = cardNum;
                 userSelectedCard1 = cardId;
                 console.log("Klik 1: " + cardId);
-                //Code werkt nog niet, want het zal dan elke eerste klik de zelfde foto geven.
-                document.getElementById(cardId).style.backgroundImage = "url(images/JFokkenroodAvatar.jpg)";
+                document.getElementById(cardId).style.backgroundImage = "url(images/" + cardNum + ".jpg)";
+
+
             } else {
                 userClick2 = cardNum;
                 userSelectedCard2 = cardId;
                 console.log("Klik 2: " + cardId)
-                //Code werkt nog niet, want het zal dan elke tweede klik de zelfde foto geven.
-                document.getElementById(cardId).style.backgroundImage = "";
+                document.getElementById(cardId).style.backgroundImage = "url(images/" + cardNum + ".jpg";
             }
 
             if (userClick2 !== 0) {
@@ -52,8 +46,12 @@
                     document.getElementById(userSelectedCard2).disabled = false;
                     document.getElementById(userSelectedCard1).value = "";
                     document.getElementById(userSelectedCard2).value = "";
-                    //Code werkt nog niet, want het zal alleen de tweede klik weer omzetten naar een blauw hokje.
-                    document.getElementById(cardId).style.backgroundImage = "url(images/BlauwHokje.jpg)";
+                    setTimeout(turnBack, 2000);
+
+                    function turnBack() {
+                        document.getElementById(userSelectedCard1).style.backgroundImage = "url(images/BlauwHokje.jpg";
+                        document.getElementById(userSelectedCard2).style.backgroundImage = "url(images/BlauwHokje.jpg";
+                    }
                 }
                 //teller++;
                 userClick1 = 0;
@@ -64,13 +62,13 @@
         function shuffleCards() {
             document.getElementById("memoryCards").innerHTML = '';
             let cardsArr = [];
-            for (let i = 0; i < 16 / 2; i++) {
+            for (let i = 0; i < 20 / 2; i++) {
                 cardsArr.push(i);
                 cardsArr.push(i);
             }
             while (cardsArr.length > 0) {
                 let randomNumber = Math.floor(Math.random() * (cardsArr.length));
-                document.getElementById("memoryCards").innerHTML += '<input type="button" value="' + cardsArr[randomNumber] + '" id="kaart' + cardsArr.length + '" class="memoryCard" onclick="checkClickedCard(' + cardsArr[randomNumber] + ', \'kaart' + cardsArr.length + '\');">'
+                document.getElementById("memoryCards").innerHTML += '<input type="button" value="" id="kaart' + cardsArr.length + '" class="memoryCard" onclick="checkClickedCard(' + cardsArr[randomNumber] + ', \'kaart' + cardsArr.length + '\');">'
                 cardsArr.splice(randomNumber, 1);
             }
         }
@@ -87,32 +85,33 @@
 
     <div class="memoryContainer">
         <h1>Memory</h1>
-        <input type="button" value="" id="kaart1" class="memoryCard" onclick="checkClickedCard(1, 'kaart1')">
-        <input type="button" value="" id="kaart2" class="memoryCard" onclick="checkClickedCard(2, 'kaart2')">
-        <input type="button" value="" id="kaart3" class="memoryCard" onclick="checkClickedCard(3, 'kaart3')">
-        <input type="button" value="" id="kaart4" class="memoryCard" onclick="checkClickedCard(4, 'kaart4')">
-        <div class="clear"></div>
-        <input type="button" value="" id="kaart5" class="memoryCard" onclick="checkClickedCard(5, 'kaart5')">
-        <input type="button" value="" id="kaart6" class="memoryCard" onclick="checkClickedCard(6, 'kaart6')">
-        <input type="button" value="" id="kaart7" class="memoryCard" onclick="checkClickedCard(7, 'kaart7')">
-        <input type="button" value="" id="kaart8" class="memoryCard" onclick="checkClickedCard(8, 'kaart8')">
-        <div class="clear"></div>
-        <input type="button" value="" id="kaart9" class="memoryCard" onclick="checkClickedCard(1, 'kaart9')">
-        <input type="button" value="" id="kaart10" class="memoryCard" onclick="checkClickedCard(2, 'kaart10')">
-        <input type="button" value="" id="kaart11" class="memoryCard" onclick="checkClickedCard(3, 'kaart11')">
-        <input type="button" value="" id="kaart12" class="memoryCard" onclick="checkClickedCard(4, 'kaart12')">
-        <div class="clear"></div>
-        <input type="button" value="" id="kaart13" class="memoryCard" onclick="checkClickedCard(5, 'kaart13')">
-        <input type="button" value="" id="kaart14" class="memoryCard" onclick="checkClickedCard(6, 'kaart14')">
-        <input type="button" value="" id="kaart15" class="memoryCard" onclick="checkClickedCard(7, 'kaart15')">
-        <input type="button" value="" id="kaart16" class="memoryCard" onclick="checkClickedCard(8, 'kaart16')">
+        <div id="memoryCards"></div>
+<!--        <input type="button" value="" id="kaart1" class="memoryCard" onclick="checkClickedCard(1, 'kaart1')">-->
+<!--        <input type="button" value="" id="kaart2" class="memoryCard" onclick="checkClickedCard(2, 'kaart2')">-->
+<!--        <input type="button" value="" id="kaart3" class="memoryCard" onclick="checkClickedCard(3, 'kaart3')">-->
+<!--        <input type="button" value="" id="kaart4" class="memoryCard" onclick="checkClickedCard(4, 'kaart4')">-->
+<!--        <div class="clear"></div>-->
+<!--        <input type="button" value="" id="kaart5" class="memoryCard" onclick="checkClickedCard(5, 'kaart5')">-->
+<!--        <input type="button" value="" id="kaart6" class="memoryCard" onclick="checkClickedCard(6, 'kaart6')">-->
+<!--        <input type="button" value="" id="kaart7" class="memoryCard" onclick="checkClickedCard(7, 'kaart7')">-->
+<!--        <input type="button" value="" id="kaart8" class="memoryCard" onclick="checkClickedCard(8, 'kaart8')">-->
+<!--        <div class="clear"></div>-->
+<!--        <input type="button" value="" id="kaart9" class="memoryCard" onclick="checkClickedCard(1, 'kaart9')">-->
+<!--        <input type="button" value="" id="kaart10" class="memoryCard" onclick="checkClickedCard(2, 'kaart10')">-->
+<!--        <input type="button" value="" id="kaart11" class="memoryCard" onclick="checkClickedCard(3, 'kaart11')">-->
+<!--        <input type="button" value="" id="kaart12" class="memoryCard" onclick="checkClickedCard(4, 'kaart12')">-->
+<!--        <div class="clear"></div>-->
+<!--        <input type="button" value="" id="kaart13" class="memoryCard" onclick="checkClickedCard(5, 'kaart13')">-->
+<!--        <input type="button" value="" id="kaart14" class="memoryCard" onclick="checkClickedCard(6, 'kaart14')">-->
+<!--        <input type="button" value="" id="kaart15" class="memoryCard" onclick="checkClickedCard(7, 'kaart15')">-->
+<!--        <input type="button" value="" id="kaart16" class="memoryCard" onclick="checkClickedCard(8, 'kaart16')">-->
     </div>
 
     <div class="guessContainer" id="gok"></div>
 
-<!--    <div class="shuffleContainer">-->
-<!--        <input type="button" value="Klik hier om de kaarten te schudden." onclick="shuffleCards()">-->
-<!--    </div>-->
+    <div class="shuffleContainer">
+        <input type="button" value="Klik hier om de kaarten te schudden." onclick="shuffleCards()">
+    </div>
 
 </body>
 </html>
