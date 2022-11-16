@@ -67,7 +67,10 @@
                 cardsArr.push(i);
             }
             while (cardsArr.length > 0) {
+                //randomNumber kan ook 0 zijn, waarbij kaart0.jpg wordt getoond. Deze bestaat echter niet echt en geeft een 404 weer.
+                //randomNumber is nooit 10, dus kaart10.jpg komt nooit voorbij.
                 let randomNumber = Math.floor(Math.random() * (cardsArr.length));
+                alert(randomNumber);
                 document.getElementById("memoryCards").innerHTML += '<input type="button" value="" id="kaart' + cardsArr.length + '" class="memoryCard" onclick="checkClickedCard(' + cardsArr[randomNumber] + ', \'kaart' + cardsArr.length + '\');">'
                 cardsArr.splice(randomNumber, 1);
             }
