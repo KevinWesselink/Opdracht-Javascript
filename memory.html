@@ -60,7 +60,7 @@
         function shuffleCards() {
             document.getElementById("memoryCards").innerHTML = '';
             let cardsArr = [];
-            for (let i = 0; i < 20 / 2; i++) {
+            for (let i = 1; i < (20 / 2) + 1; i++) {
                 cardsArr.push(i);
                 cardsArr.push(i);
             }
@@ -68,7 +68,7 @@
                 //randomNumber kan ook 0 zijn, waarbij kaart0.jpg wordt getoond. Deze bestaat echter niet echt en geeft een 404 weer.
                 //randomNumber is nooit 10, dus kaart10.jpg komt nooit voorbij.
                 let randomNumber = Math.floor(Math.random() * (cardsArr.length));
-                alert(randomNumber);
+               // alert(randomNumber);
                 document.getElementById("memoryCards").innerHTML += '<input type="button" value="" id="kaart' + cardsArr.length + '" class="memoryCard" onclick="checkClickedCard(' + cardsArr[randomNumber] + ', \'kaart' + cardsArr.length + '\');">'
                 cardsArr.splice(randomNumber, 1);
             }
