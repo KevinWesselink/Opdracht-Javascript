@@ -26,11 +26,13 @@
                 userSelectedCard1 = cardId;
                 console.log("Klik 1: " + cardId);
                 document.getElementById(cardId).style.backgroundImage = "url(images/" + cardNum + ".jpg)";
+                playSound();
             } else {
                 userClick2 = cardNum;
                 userSelectedCard2 = cardId;
                 console.log("Klik 2: " + cardId)
                 document.getElementById(cardId).style.backgroundImage = "url(images/" + cardNum + ".jpg";
+                playSound();
             }
 
             if (userClick2 !== 0) {
@@ -65,13 +67,14 @@
                 cardsArr.push(i);
             }
             while (cardsArr.length > 0) {
-                //randomNumber kan ook 0 zijn, waarbij kaart0.jpg wordt getoond. Deze bestaat echter niet echt en geeft een 404 weer.
-                //randomNumber is nooit 10, dus kaart10.jpg komt nooit voorbij.
                 let randomNumber = Math.floor(Math.random() * (cardsArr.length));
-               // alert(randomNumber);
                 document.getElementById("memoryCards").innerHTML += '<input type="button" value="" id="kaart' + cardsArr.length + '" class="memoryCard" onclick="checkClickedCard(' + cardsArr[randomNumber] + ', \'kaart' + cardsArr.length + '\');">'
                 cardsArr.splice(randomNumber, 1);
             }
+        }
+
+        function playSound() {
+            document.getElementById("playSound").play();
         }
     </script>
 </head>
@@ -83,6 +86,10 @@
         <a href="./rockPaperScissors.html">Steen Papier Schaar</a>
         <a href="./memory.html">Memory</a>
     </nav>
+
+    <audio id="playSound">
+        <source src="sounds/ping.mp3" type="audio/mpeg">
+    </audio>
 
     <div class="memoryContainer">
         <h1>Memory</h1>
