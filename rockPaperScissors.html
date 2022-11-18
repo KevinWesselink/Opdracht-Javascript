@@ -13,38 +13,74 @@
         let computerChoice = "";
         const choices = ["steen", "papier", "schaar"];
 
-        function startGame(playerChoice, value) {
+        function startGame(value) {
             playerChoice = value;
-            document.getElementById(playerChoice).innerHTML = "url(images/" + playerChoice + ".jpg)";
+            alert("Playerchoice = " + playerChoice)
+            document.getElementById("playerChoice").innerHTML = "url(images/" + playerChoice + ".jpg)";
+
+            computerChoice = Math.floor(Math.random() * choices.length);
+            //computer pakt nu 0.jpg, 1.jpg of 2.jpg. Maar dit moet steen.jpg of een van de anderen zijn.
+            alert("Computerchoice = " + computerChoice)
+            if (computerChoice === 0) {
+                document.getElementById("computerChoice").innerHTML = "url(images/papier.jpg)";
+                computerChoice = "papier";
+            } else if (computerChoice === 1) {
+                document.getElementById("computerChoice").innerHTML = "url(images/steen.jpg)";
+                computerChoice = "steen";
+            } else {
+                document.getElementById("computerChoice").innerHTML = "url(images/schaar.jpg)";
+                computerChoice = "schaar";
+            }
 
             if (playerChoice === "steen") {
                 if (computerChoice === "steen") {
-                    alert("Gelijkspel");
+                    setTimeout(draw, 1000)
                 } else if (computerChoice === "papier") {
-                    alert("Je hebt verloren");
+                    setTimeout(lose, 1000)
+                    //computerWin++
                 } else {
-                    alert("Je hebt gewonnen");
+                    setTimeout(win, 1000)
+                    //playerWin++
                 }
+                //Spel start hier opnieuw
             }
 
             if (playerChoice === "papier") {
                 if (computerChoice === "steen") {
-                    alert("Je hebt gewonnen");
+                    setTimeout(win, 1000)
+                    //playerWin++
                 } else if (computerChoice === "papier") {
-                    alert("Gelijkspel");
+                    setTimeout(draw, 1000)
                 } else {
-                    alert("Je hebt verloren");
+                    setTimeout(draw, 1000)
+                    //computerWin++
                 }
+                //Spel start hier opnieuw
             }
 
             if (playerChoice === "schaar") {
                 if (computerChoice === "steen") {
-                    alert("Je hebt verloren");
+                    setTimeout(lose, 1000)
+                    //computerWin++
                 } else if (computerChoice === "papier") {
-                    alert("Je hebt gewonnen");
+                    setTimeout(win, 1000)
+                    //playerWin++
                 } else {
-                    alert("Gelijkspel");
+                    setTimeout(draw, 1000)
                 }
+                //Spel start hier opnieuw
+            }
+
+            function win() {
+                alert("Je hebt gewonnen!");
+            }
+
+            function lose() {
+                alert("Je hebt verloren!");
+            }
+
+            function draw() {
+                alert("Gelijkspel!");
             }
         }
     </script>
@@ -59,15 +95,15 @@
     </nav>
 
     <div class="gameContainer">
-        <div class="player" id="player">
-            <input type="button" value="steen" name="playerChoice" class="choiceCards" onclick="startGame()">
-            <input type="button" value="papier" name="playerChoice" class="choiceCards" onclick="startGame()">
-            <input type="button" value="schaar" name="playerChoice" class="choiceCards" onclick="startGame()">
+        <div class="player" id="playerChoice">
+            <input type="image" src="images/steen.jpg" alt="" value="steen" name="playerChoice" class="choiceCards" onclick="startGame('steen')">
+            <input type="image" src="images/papier.jpg" alt="" value="papier" name="playerChoice" class="choiceCards" onclick="startGame('papier')">
+            <input type="image" src="images/schaar.jpg" alt="" value="schaar" name="playerChoice" class="choiceCards" onclick="startGame('schaar')">
 
             Speler 1
         </div>
 
-        <div class="computer" id="computer">
+        <div class="computer" id="computerChoice">
 
 
             Speler 2
