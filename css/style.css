@@ -88,3 +88,19 @@ h1 {
     margin: 10px;
     border: 1px solid #999999;
 }
+
+.winContainer {
+    justify-content: space-around;
+    background-color: #666;
+    color: white;
+}
+
+/*.winCounterPlayer {*/
+/*    background-color: #666;*/
+/*    color: white;*/
+/*}*/
+
+/*.winCounterComputer {*/
+/*    background-color: #666;*/
+/*    color: white;*/
+/*}*/
