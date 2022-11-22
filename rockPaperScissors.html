@@ -17,72 +17,71 @@
 
         function startGame(value) {
             playerChoice = value;
-            alert("Playerchoice = " + playerChoice)
+            alert("Playerchoice = " + playerChoice);
             //Code werkt hier nog niet goed, laat de url zien als een String.
-            document.getElementById("playerChoice").innerHTML = "url(images/" + playerChoice + ".jpg)";
+            document.getElementById("playerChoice").innerHTML = "<img src='images/' + playerChoice + '.jpg'>";
 
             computerChoice = Math.floor(Math.random() * choices.length);
             if (computerChoice === 0) {
                 //Laat url zien als String.
-                document.getElementById("computerChoice").innerHTML = "url(images/papier.jpg)";
+                document.getElementById("computerChoice").innerHTML = "<img src='images/papier.jpg'>";
                 computerChoice = "papier";
-                alert("Computerchoice = " + computerChoice)
+                alert("Computerchoice = " + computerChoice);
             } else if (computerChoice === 1) {
                 //laat url zien als String.
-                document.getElementById("computerChoice").innerHTML = "url(images/steen.jpg)";
+                document.getElementById("computerChoice").innerHTML = "<img src='images/steen.jpg'>";
                 computerChoice = "steen";
-                alert("Computerchoice = " + computerChoice)
+                alert("Computerchoice = " + computerChoice);
             } else {
                 //laat url zien als String.
-                document.getElementById("computerChoice").innerHTML = "url(images/schaar.jpg)";
+                document.getElementById("computerChoice").innerHTML = "<img src='images/schaar.jpg'>";
                 computerChoice = "schaar";
-                alert("Computerchoice = " + computerChoice)
+                alert("Computerchoice = " + computerChoice);
             }
 
             if (playerChoice === "steen") {
                 if (computerChoice === "steen") {
-                    setTimeout(draw, 1000)
+                    setTimeout(draw, 1000);
                 } else if (computerChoice === "papier") {
-                    setTimeout(lose, 1000)
-                    computerWin++
-                    document.getElementById("computerWin").innerHTML = "De computer heeft momenteel " + computerWin + " keer gewonnen!"
+                    setTimeout(lose, 1000);
+                    computerWin++;
+                    document.getElementById("computerWin").innerHTML = "De computer heeft momenteel " + computerWin + " keer gewonnen!";
                 } else {
-                    setTimeout(win, 1000)
-                    playerWin++
-                    document.getElementById("playerWin").innerHTML = "Je hebt momenteel " + playerWin + " keer gewonnen!"
+                    setTimeout(win, 1000);
+                    playerWin++;
+                    document.getElementById("playerWin").innerHTML = "Je hebt momenteel " + playerWin + " keer gewonnen!";
                 }
-                //Spel start hier opnieuw
             }
 
             if (playerChoice === "papier") {
                 if (computerChoice === "steen") {
-                    setTimeout(win, 1000)
-                    playerWin++
-                    document.getElementById("playerWin").innerHTML = "Je hebt momenteel " + playerWin + " keer gewonnen!"
+                    setTimeout(win, 1000);
+                    playerWin++;
+                    document.getElementById("playerWin").innerHTML = "Je hebt momenteel " + playerWin + " keer gewonnen!";
                 } else if (computerChoice === "papier") {
-                    setTimeout(draw, 1000)
+                    setTimeout(draw, 1000);
                 } else {
-                    setTimeout(lose, 1000)
-                    computerWin++
-                    document.getElementById("computerWin").innerHTML = "De computer heeft momenteel " + computerWin + " keer gewonnen!"
+                    setTimeout(lose, 1000);
+                    computerWin++;
+                    document.getElementById("computerWin").innerHTML = "De computer heeft momenteel " + computerWin + " keer gewonnen!";
                 }
-                //Spel start hier opnieuw
             }
 
             if (playerChoice === "schaar") {
                 if (computerChoice === "steen") {
-                    setTimeout(lose, 1000)
-                    computerWin++
-                    document.getElementById("computerWin").innerHTML = "De computer heeft momenteel " + computerWin + " keer gewonnen!"
+                    setTimeout(lose, 1000);
+                    computerWin++;
+                    document.getElementById("computerWin").innerHTML = "De computer heeft momenteel " + computerWin + " keer gewonnen!";
                 } else if (computerChoice === "papier") {
-                    setTimeout(win, 1000)
-                    playerWin++
-                    document.getElementById("playerWin").innerHTML = "Je hebt momenteel " + playerWin + " keer gewonnen!"
+                    setTimeout(win, 1000);
+                    playerWin++;
+                    document.getElementById("playerWin").innerHTML = "Je hebt momenteel " + playerWin + " keer gewonnen!";
                 } else {
-                    setTimeout(draw, 1000)
+                    setTimeout(draw, 1000);
                 }
-                //Spel start hier opnieuw
             }
+
+            //Spel start hier opnieuw
 
             function win() {
                 alert("Je hebt gewonnen!");
