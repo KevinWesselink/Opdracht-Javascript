@@ -1,6 +1,10 @@
+/*CSS van alle pagina's begint hier */
+
 nav {
     margin-bottom: 10px;
 }
+
+/*CSS van Memory begint hier */
 
 h1 {
     text-align: center;
@@ -59,6 +63,8 @@ h1 {
     margin: auto;
 }
 
+/*CSS van Steen, papier, schaar begint hier! */
+
 .player {
     height: 100%;
     width: 40%;
@@ -94,13 +100,3 @@ h1 {
     background-color: #666;
     color: white;
 }
-
-/*.winCounterPlayer {*/
-/*    background-color: #666;*/
-/*    color: white;*/
-/*}*/
-
-/*.winCounterComputer {*/
-/*    background-color: #666;*/
-/*    color: white;*/
-/*}*/
